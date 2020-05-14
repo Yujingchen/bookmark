@@ -7,7 +7,6 @@ const BookMarkItem = (
   {
     to,
     children,
-    disabled
   }) => {
   if (to !== undefined) {
     return (
