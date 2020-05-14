@@ -72,19 +72,6 @@
   border-top: 2px solid #3498DB;
 }
 
-/* iframe CSS */
-.website{
-  height: 100%;
-  min-height: 100vh !important;
-  position: relative;
-  margin-left: 280px;
-}
-.website__iframe{
-  position: absolute;
-  width: 100%;
-  height: inherit;
-
-}
 
 /* Global CSS */
 .noselect{

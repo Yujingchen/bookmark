@@ -36,9 +36,6 @@ const handleDragStart = (event, el) => {
     event.dataTransfer.setData('text/html', el.outerHTML);
   }
 };
-const handleDragEnter = (event, el) => {
-
-};
 const handleDragOver = (event, el) => {
   event.preventDefault();
   if (el) {
@@ -59,7 +56,7 @@ const handleDragEnd = (event, el) => {
 const handleDrop = (event, overEle) => {
   event.preventDefault();
   overEle.classList.remove('bookmark__listItem-over');
-  if (overEle !== draggedEl) {
+  if (overEle !== draggedEl && overEle) {
     overEle.parentNode.removeChild(draggedEl);
     const dragEleHTML = event.dataTransfer.getData('text/html');
     overEle.insertAdjacentHTML('beforebegin', dragEleHTML);
@@ -73,7 +70,6 @@ const addEvent = (el) => {
   el.addEventListener("drag", handleDrag, false)
   el.addEventListener("dragstart", (event) => handleDragStart(event, el), false);
   el.addEventListener("dragover", (event) => handleDragOver(event, el), false);
-  el.addEventListener("dragenter", (event) => handleDragEnter(event, el), false);
   el.addEventListener("dragleave", (event) => handleDragLeave(event, el), false);
   el.addEventListener("dragleave", (event) => handleDragEnd(event, el), false);
   el.addEventListener("drop", (event) => handleDrop(event, el), false);
@@ -88,24 +84,18 @@ function App() {
         addEvent(el)
       }
     }
-
   })
   return (
     <div className="content">
       <div className="bookmark__main">
         <h4 className="bookmark__title">Favourite</h4>
         <ul className="bookmark__list">
-          <BookMarkItem draggable="true" to="https://www.bbc.com">BBC News</BookMarkItem>
-          <BookMarkItem draggable="true" to="https://www.hs.fi">Helsingin Sanomat</BookMarkItem>
-          <BookMarkItem draggable="true" to="https://www.vasabladet.fi">Vasabladet</BookMarkItem>
-          <BookMarkItem draggable="true" to="https://www.foxnews.com">FOX News</BookMarkItem>
-          <BookMarkItem draggable="true" to="https://www.theguardian.com">Guardian </BookMarkItem>
+          <BookMarkItem to="https://www.bbc.com">BBC News</BookMarkItem>
+          <BookMarkItem to="https://www.hs.fi">Helsingin Sanomat</BookMarkItem>
+          <BookMarkItem to="https://www.vasabladet.fi">Vasabladet</BookMarkItem>
+          <BookMarkItem to="https://www.foxnews.com">FOX News</BookMarkItem>
+          <BookMarkItem to="https://www.theguardian.com">Guardian </BookMarkItem>
         </ul>
-      </div>
-      <div className="website">
-        <iframe title="myiframe" className="website__iframe" name="right_side" src="" frameBorder="0" scrolling="yes">
-          hellp
-          </iframe>
       </div>
     </div>
   );
