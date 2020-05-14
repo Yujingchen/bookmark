@@ -1,4 +1,4 @@
-# [Bookmark App built with JavaScript, React](https://mysterious-anchorage-50268.herokuapp.com)
+# Bookmark App built with JavaScript, React
 ![Bookmark App](public/img/screenshots/Screenshot.png?raw=true 'Bookmark app')
 
 
