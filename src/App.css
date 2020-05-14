@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
+.content{
+  height: 100%;
+  min-height: 100vh !important
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Bookmark CSS */
+.bookmark {
+  position: relative;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding: .5rem 1rem;
+}
+.bookmark__title{
+  color: #ffffff;
+  padding: .275rem ;
+  margin-left: 5px;
+}
+.bookmark__main{
+  background-color: #5F6A6A;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: 74px auto 50px;
+  width: 281px;
+  height: 100%;
+  border-right: solid #CCD1D1 1px;
+  transition: left .2s ease-in;
+  box-sizing: border-box;
+  overflow-y: scroll;
 }
 
-.App-link {
-  color: #61dafb;
+.bookmark__list{
+  list-style: none;
+  padding: 0;
+} 
+.bookmark__link{
+  box-sizing: border-box;
+  width: 90%;
+  cursor: default;
+  color: #ffffff;
+  display: inline-block;
+  padding: .275rem ;
+  font-size: 15px;
+  text-decoration: none;
+  margin:0 0 0 5px;
+  justify-self: center;
+  font-weight: 500;
+}
+.bookmark__link:hover {
+  cursor: default;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bookmark__link:focus {
+  outline-style: none;
+}
+
+.bookmark__listItem{
+  z-index: 2;
+  box-sizing: border-box;
+}
+.bookmark__listItem__icon{
+  margin-right: 0.6em;
+}
+
+.bookmark__listItem-dragged{
+  opacity: 0.5;
+}
+.bookmark__listItem-over{
+  border-top: 2px solid #3498DB;
+}
+
+/* iframe CSS */
+.website{
+  height: 80%;
+  min-height: 100vh !important;
+  position: relative;
+  left: 280px;
+}
+.website__iframe{
+  position: absolute;
+  width: 81%;
+  height: 100%;
+
+}
+
+/* Global CSS */
+.noselect{
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
+body{
+  overflow-x: hidden;
+  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  margin: 0;
+}
+
+ul{
+  margin-block-end: 0;
+  margin-block-start: 0;
 }
