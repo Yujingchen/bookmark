@@ -11,10 +11,6 @@
 4.  After install, run: `npm run start` or `yarn start`
 5.  It will open your browser(http://localhost:3000)
 
-## Note
-
-Bookmark App is built on top of [Create React App](https://github.com/facebook/create-react-app), which means all features that create-react-app supports are available.
-Live demo is deployed to Heroku(https://dashboard.heroku.com/apps)
 
 ## TODO List
 
