@@ -1,4 +1,4 @@
-# Bookmark App built with JavaScript, React
+# Bookmark App built with JavaScript
 ![Bookmark App](public/img/screenshots/Screenshot.png?raw=true 'Bookmark app')
 
 
